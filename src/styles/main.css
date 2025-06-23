@@ -1,0 +1,125 @@
+body {
+  background: #181818;
+  color: #e0e0e0;
+  font-family: 'VT323', monospace;
+  margin: 0;
+  min-height: 100vh;
+}
+
+.container {
+  max-width: 700px;
+  margin: 40px auto;
+  padding: 32px;
+  background: #232323;
+  border-radius: 12px;
+  box-shadow: 0 2px 16px #0008;
+  animation: fadeInUp 1s cubic-bezier(0.23, 1, 0.32, 1);
+}
+
+header {
+  text-align: center;
+  margin-bottom: 32px;
+  opacity: 0;
+  animation: fadeInUp 0.8s cubic-bezier(0.23, 1, 0.32, 1) forwards;
+  animation-delay: 0.1s;
+}
+
+h1 {
+  font-size: 3rem;
+  margin: 0 0 8px 0;
+  letter-spacing: 2px;
+}
+
+h2 {
+  font-size: 2rem;
+  margin-top: 32px;
+  margin-bottom: 12px;
+  border-bottom: 1px solid #333;
+  padding-bottom: 4px;
+}
+
+ul {
+  padding-left: 20px;
+  opacity: 0;
+  animation: fadeInUp 0.8s cubic-bezier(0.23, 1, 0.32, 1) forwards;
+  animation-delay: 0.5s;
+}
+
+a {
+  color: #7ecfff;
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+section {
+  margin-bottom: 24px;
+  opacity: 0;
+  animation: fadeInUp 0.8s cubic-bezier(0.23, 1, 0.32, 1) forwards;
+  animation-delay: 0.3s;
+}
+
+@keyframes fadeInUp {
+  0% {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+header,
+main section,
+main ul,
+main p {
+  opacity: 0;
+  animation: fadeInUp 0.8s cubic-bezier(0.23, 1, 0.32, 1) forwards;
+}
+
+header {
+  animation-delay: 0.1s;
+}
+
+main section {
+  animation-delay: 0.3s;
+}
+
+main ul,
+main p {
+  animation-delay: 0.5s;
+}
+
+.typewriter {
+  display: inline-block;
+  overflow: hidden;
+  border-right: 2px solid #7ecfff;
+  white-space: nowrap;
+  animation: typing 2.2s steps(30, end) 0.3s 1 normal both, blink-caret 0.7s step-end infinite;
+}
+
+@keyframes typing {
+  from {
+    width: 0;
+  }
+
+  to {
+    width: 100%;
+  }
+}
+
+@keyframes blink-caret {
+
+  from,
+  to {
+    border-color: transparent;
+  }
+
+  50% {
+    border-color: #7ecfff;
+  }
+}
