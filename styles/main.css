@@ -1,5 +1,5 @@
 body {
-  background: #181818;
+  background: #111216;
   color: #e0e0e0;
   font-family: 'VT323', monospace;
   margin: 0;
@@ -260,4 +260,9 @@ main p {
   text-align: center;
   margin: 0 auto 64px auto;
   max-width: 600px;
+  min-height: 65vh;
+}
+
+.projects-section {
+  margin-top: 8vh;
 }
