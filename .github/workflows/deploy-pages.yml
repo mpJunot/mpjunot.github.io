@@ -34,10 +34,12 @@ jobs:
           cache-dependency-path: portfolio/pnpm-lock.yaml
 
       - name: Install dependencies
-        run: pnpm install --dir portfolio
+        run: pnpm install
+        working-directory: portfolio
 
       - name: Build
-        run: pnpm run build --dir portfolio
+        run: pnpm run build
+        working-directory: portfolio
 
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
