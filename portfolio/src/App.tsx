@@ -6,6 +6,8 @@ import {
   aboutParagraphs,
   aboutExperiences,
   aboutQualities,
+  skills,
+  tools,
   contactEmail,
   contactPhone,
   contactLinks,
@@ -13,6 +15,7 @@ import {
   readmeSubtitle,
   readmeBio,
 } from './data';
+import lightningImg from './assets/lightning.png';
 
 const ease = [0.22, 1, 0.36, 1];
 
@@ -96,6 +99,27 @@ export default function App() {
         <div className='cyberpunk-lines' />
         <div className='cyberpunk-flash' />
         <div className='cyberpunk-flash-strong' />
+        <div className='lightning-overlay' aria-hidden>
+          <div className='lightning-screen-flash' />
+          <div
+            className='lightning-bolt'
+            style={{ left: '5%', top: '8%', height: '92%', width: '180px', animationDelay: '0s' }}
+          >
+            <img src={lightningImg} alt='' className='w-full h-full object-contain object-top' />
+          </div>
+          <div
+            className='lightning-bolt'
+            style={{ right: '8%', top: '8%', height: '92%', width: '140px', animationDelay: '0.05s' }}
+          >
+            <img src={lightningImg} alt='' className='w-full h-full object-contain object-top scale-x-[-1]' />
+          </div>
+          <div
+            className='lightning-bolt'
+            style={{ left: '50%', top: '8%', height: '92%', width: '100px', transform: 'translateX(-50%)', animationDelay: '0.1s' }}
+          >
+            <img src={lightningImg} alt='' className='w-full h-full object-contain object-top' />
+          </div>
+        </div>
         <div className='cyberpunk-scanlines' />
         <div className='cyberpunk-vignette' />
       </div>
@@ -116,14 +140,21 @@ export default function App() {
             onClick={scrollToSection('projets')}
             className='px-4 py-2 rounded-full text-sm font-medium text-[var(--color-text-muted)] hover:text-[var(--neon-violet)] hover:border-[var(--neon-violet)] hover:shadow-[0_0_12px_rgba(167,139,250,0.35)] border border-transparent transition-all duration-300'
           >
-            Projets
+            Projects
           </a>
           <a
             href='#a-propos'
             onClick={scrollToSection('a-propos')}
             className='px-4 py-2 rounded-full text-sm font-medium text-[var(--color-text-muted)] hover:text-[var(--neon-violet)] hover:border-[var(--neon-violet)] hover:shadow-[0_0_12px_rgba(167,139,250,0.35)] border border-transparent transition-all duration-300'
           >
-            À propos
+            About
+          </a>
+          <a
+            href='#skills'
+            onClick={scrollToSection('skills')}
+            className='px-4 py-2 rounded-full text-sm font-medium text-[var(--color-text-muted)] hover:text-[var(--neon-violet)] hover:border-[var(--neon-violet)] hover:shadow-[0_0_12px_rgba(167,139,250,0.35)] border border-transparent transition-all duration-300'
+          >
+            Skills
           </a>
           <a
             href='#contact'
@@ -174,9 +205,10 @@ export default function App() {
               </motion.div>
               {/* Carte profil type README + GitHub Stats dans la même div */}
               <motion.div
-                initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.6, ease, delay: 0.35 }}
+                initial={{ opacity: 0, y: 28, scale: 0.96 }}
+                animate={{ opacity: 1, y: 0, scale: 1 }}
+                transition={{ type: 'spring', stiffness: 260, damping: 24, delay: 0.35 }}
+                whileHover={{ scale: 1.01, transition: { duration: 0.25 } }}
                 className='w-full max-w-4xl mx-auto rounded-xl border border-[rgba(167,139,250,0.25)] bg-[var(--color-surface-elevated)]/90 overflow-visible'
                 style={{
                   boxShadow:
@@ -255,7 +287,7 @@ export default function App() {
                     '0 0 25px rgba(167,139,250,0.7), 0 0 50px rgba(167,139,250,0.4)',
                 }}
               >
-                À propos
+                About
               </motion.h2>
               <div className='max-w-3xl mx-auto space-y-6 text-center'>
                 {aboutParagraphs.map((paragraph, i) => (
@@ -279,13 +311,16 @@ export default function App() {
                   className='pt-4'
                 >
                   <h3 className='text-base font-semibold text-[#c4b5fd] mb-3'>
-                    Expériences
+                    Experience
                   </h3>
                   <ul className='space-y-2 text-[var(--color-text-muted)]'>
                     {aboutExperiences.map((exp, i) => (
                       <li key={i} className='text-lg leading-relaxed'>
                         <span className='text-[#e9d5ff]'>{exp.role}</span>
-                        <span className='text-[var(--color-text-muted)]'> — {exp.company}</span>
+                        <span className='text-[var(--color-text-muted)]'>
+                          {' '}
+                          — {exp.company}
+                        </span>
                       </li>
                     ))}
                   </ul>
@@ -313,6 +348,210 @@ export default function App() {
           </motion.div>
         </section>
 
+        {/* Skills & Tools */}
+        <section
+          id='skills'
+          className='relative z-10 py-20 sm:py-28 px-6 border-t border-[rgba(167,139,250,0.2)] bg-[var(--color-surface)]/75'
+        >
+          <div className='max-w-4xl mx-auto'>
+            <motion.h2
+              initial={{ opacity: 0, y: 24 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.7, ease }}
+              className='text-2xl font-semibold mb-10 tracking-wide text-[#c4b5fd] neon-text text-center'
+              style={{
+                textShadow:
+                  '0 0 25px rgba(167,139,250,0.7), 0 0 50px rgba(167,139,250,0.4)',
+              }}
+            >
+              Skills & Tools
+            </motion.h2>
+            <div className='grid gap-6 sm:grid-cols-2'>
+              <motion.div
+                initial={{ opacity: 0, y: 32, scale: 0.94 }}
+                whileInView={{ opacity: 1, y: 0, scale: 1 }}
+                viewport={{ once: true, amount: 0.2 }}
+                transition={{ type: 'spring', stiffness: 280, damping: 24, delay: 0.1 }}
+                whileHover={{
+                  scale: 1.02,
+                  y: -4,
+                  transition: { type: 'spring', stiffness: 300, damping: 20 },
+                }}
+                whileTap={{ scale: 0.99 }}
+                className='rounded-2xl border border-[rgba(167,139,250,0.25)] bg-[var(--color-surface-elevated)]/90 p-6'
+                style={{
+                  boxShadow:
+                    '0 0 20px rgba(167,139,250,0.1), 0 0 40px rgba(167,139,250,0.05)',
+                }}
+              >
+                <h3 className='text-lg font-semibold text-[#c4b5fd] mb-4'>
+                  Skills
+                </h3>
+                <div className='space-y-4 text-sm text-[var(--color-text-muted)]'>
+                  <div>
+                    <span className='text-[#e9d5ff] font-medium'>Frontend</span>
+                    <p className='mt-1 flex flex-wrap gap-2'>
+                      {skills.frontend.map((s) => (
+                        <span
+                          key={s}
+                          className='px-2.5 py-1 rounded-lg bg-[rgba(167,139,250,0.12)] border border-[rgba(167,139,250,0.2)]'
+                        >
+                          {s}
+                        </span>
+                      ))}
+                    </p>
+                  </div>
+                  <div>
+                    <span className='text-[#e9d5ff] font-medium'>Backend</span>
+                    <p className='mt-1 flex flex-wrap gap-2'>
+                      {skills.backend.map((s) => (
+                        <span
+                          key={s}
+                          className='px-2.5 py-1 rounded-lg bg-[rgba(167,139,250,0.12)] border border-[rgba(167,139,250,0.2)]'
+                        >
+                          {s}
+                        </span>
+                      ))}
+                    </p>
+                  </div>
+                  <div>
+                    <span className='text-[#e9d5ff] font-medium'>Languages</span>
+                    <ul className='mt-1 space-y-1.5'>
+                      {skills.languages.map((lang) => (
+                        <li
+                          key={lang.name}
+                          className='flex items-center justify-between gap-3 text-sm text-[var(--color-text-muted)]'
+                        >
+                          <span className='px-2.5 py-1 rounded-lg bg-[rgba(34,211,238,0.1)] border border-[rgba(34,211,238,0.25)]'>
+                            {lang.name}
+                          </span>
+                          <span className='text-[#c4b5fd] text-xs font-medium tabular-nums'>
+                            {lang.level}
+                          </span>
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
+                  <div>
+                    <span className='text-[#e9d5ff] font-medium'>
+                      DevOps & Infra
+                    </span>
+                    <p className='mt-1 flex flex-wrap gap-2'>
+                      {skills.devops.map((s) => (
+                        <span
+                          key={s}
+                          className='px-2.5 py-1 rounded-lg bg-[rgba(167,139,250,0.12)] border border-[rgba(167,139,250,0.2)]'
+                        >
+                          {s}
+                        </span>
+                      ))}
+                    </p>
+                  </div>
+                </div>
+              </motion.div>
+              <motion.div
+                initial={{ opacity: 0, y: 32, scale: 0.94 }}
+                whileInView={{ opacity: 1, y: 0, scale: 1 }}
+                viewport={{ once: true, amount: 0.2 }}
+                transition={{ type: 'spring', stiffness: 280, damping: 24, delay: 0.2 }}
+                whileHover={{
+                  scale: 1.02,
+                  y: -4,
+                  transition: { type: 'spring', stiffness: 300, damping: 20 },
+                }}
+                whileTap={{ scale: 0.99 }}
+                className='rounded-2xl border border-[rgba(167,139,250,0.25)] bg-[var(--color-surface-elevated)]/90 p-6'
+                style={{
+                  boxShadow:
+                    '0 0 20px rgba(167,139,250,0.1), 0 0 40px rgba(167,139,250,0.05)',
+                }}
+              >
+                <h3 className='text-lg font-semibold text-[#c4b5fd] mb-4'>
+                  Tools
+                </h3>
+                <div className='space-y-4'>
+                  <div>
+                    <span className='text-[#e9d5ff] font-medium text-sm'>
+                      Tools
+                    </span>
+                    <p className='mt-1 flex flex-wrap gap-2'>
+                      {tools.map((t) => (
+                        <span
+                          key={t}
+                          className='px-3 py-1.5 rounded-lg text-sm font-medium border border-[rgba(34,211,238,0.25)] bg-[rgba(34,211,238,0.08)] text-[var(--color-text-muted)]'
+                        >
+                          {t}
+                        </span>
+                      ))}
+                    </p>
+                  </div>
+                  <div>
+                    <span className='text-[#e9d5ff] font-medium text-sm'>
+                      UI Libraries
+                    </span>
+                    <p className='mt-1 flex flex-wrap gap-2'>
+                      {skills.graphicLibraries.map((s) => (
+                        <span
+                          key={s}
+                          className='px-2.5 py-1 rounded-lg text-sm border border-[rgba(167,139,250,0.2)] bg-[rgba(167,139,250,0.08)] text-[var(--color-text-muted)]'
+                        >
+                          {s}
+                        </span>
+                      ))}
+                    </p>
+                  </div>
+                  <div>
+                    <span className='text-[#e9d5ff] font-medium text-sm'>
+                      State
+                    </span>
+                    <p className='mt-1 flex flex-wrap gap-2'>
+                      {skills.stateLibraries.map((s) => (
+                        <span
+                          key={s}
+                          className='px-2.5 py-1 rounded-lg text-sm border border-[rgba(167,139,250,0.2)] bg-[rgba(167,139,250,0.08)] text-[var(--color-text-muted)]'
+                        >
+                          {s}
+                        </span>
+                      ))}
+                    </p>
+                  </div>
+                  <div>
+                    <span className='text-[#e9d5ff] font-medium text-sm'>
+                      Forms & Validation
+                    </span>
+                    <p className='mt-1 flex flex-wrap gap-2'>
+                      {skills.formLibraries.map((s) => (
+                        <span
+                          key={s}
+                          className='px-2.5 py-1 rounded-lg text-sm border border-[rgba(167,139,250,0.2)] bg-[rgba(167,139,250,0.08)] text-[var(--color-text-muted)]'
+                        >
+                          {s}
+                        </span>
+                      ))}
+                    </p>
+                  </div>
+                  <div>
+                    <span className='text-[#e9d5ff] font-medium text-sm'>
+                      Icons
+                    </span>
+                    <p className='mt-1 flex flex-wrap gap-2'>
+                      {skills.icons.map((s) => (
+                        <span
+                          key={s}
+                          className='px-2.5 py-1 rounded-lg text-sm border border-[rgba(167,139,250,0.2)] bg-[rgba(167,139,250,0.08)] text-[var(--color-text-muted)]'
+                        >
+                          {s}
+                        </span>
+                      ))}
+                    </p>
+                  </div>
+                </div>
+              </motion.div>
+            </div>
+          </div>
+        </section>
+
         {/* Projets */}
         <section
           id='projets'
@@ -330,7 +569,7 @@ export default function App() {
                   '0 0 25px rgba(167,139,250,0.7), 0 0 50px rgba(167,139,250,0.4)',
               }}
             >
-              Projets
+              Projects
             </motion.h2>
             <div className='grid gap-6 sm:grid-cols-2'>
               {projects.map((project, i) => (
@@ -339,11 +578,16 @@ export default function App() {
                   href={project.link}
                   target='_blank'
                   rel='noopener noreferrer'
-                  initial={{ opacity: 0, y: 24 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  viewport={{ once: true }}
-                  transition={{ duration: 0.5, ease, delay: i * 0.08 }}
-                  whileHover={{ scale: 1.02 }}
+                  initial={{ opacity: 0, y: 36, scale: 0.92 }}
+                  whileInView={{ opacity: 1, y: 0, scale: 1 }}
+                  viewport={{ once: true, amount: 0.15 }}
+                  transition={{ type: 'spring', stiffness: 260, damping: 22, delay: i * 0.1 }}
+                  whileHover={{
+                    scale: 1.03,
+                    y: -6,
+                    transition: { type: 'spring', stiffness: 320, damping: 22 },
+                  }}
+                  whileTap={{ scale: 0.98 }}
                   className='card-neon group block overflow-hidden rounded-2xl bg-[var(--color-surface-elevated)] border border-[rgba(167,139,250,0.25)] transition-colors duration-300 hover:border-[var(--neon-violet)]'
                   style={{
                     boxShadow:
@@ -390,7 +634,7 @@ export default function App() {
                         filter: 'drop-shadow(0 0 8px rgba(167,139,250,0.6))',
                       }}
                     >
-                      Voir le projet
+                      View project
                       <IconArrow />
                     </span>
                   </div>
@@ -420,7 +664,7 @@ export default function App() {
               Contact
             </h2>
             <p className='text-[var(--color-text-muted)] mb-8'>
-              Une idée de projet ou une question ? Envoyez-moi un message.
+              Have a project in mind or a question? Get in touch.
             </p>
             <div className='flex flex-wrap justify-center gap-4 mb-6'>
               <a

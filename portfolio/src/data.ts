@@ -8,20 +8,40 @@ export const firstName = 'JUNOT'
 export const lastName = 'MONTPRE'
 export const githubAvatarUrl = 'https://github.com/mpjunot.png'
 export const heroDescription =
-  'Développeur Full-Stack junior — 5ᵉ année Epitech Paris. En recherche de stage, CDD ou CDI dès mars. Idées, code et design au même endroit.'
+  'Junior Full-Stack Developer — 5th year at Epitech Paris. Open to internships, fixed-term or permanent positions from March. Ideas, code and design in one place.'
 export const readmeSubtitle =
   'Full Stack Developer | Final year student at Epitech'
 export const readmeBio =
   'Passionate about creating innovative web solutions and exploring the full spectrum of software development.'
 export const aboutParagraphs = [
-  "Étudiant en 5ᵉ année à Epitech Paris, spécialisé en développement Full Stack. La pédagogie d'Epitech repose sur l'apprentissage par projet et l'autonomie : peu de cours magistraux, beaucoup de pratique, de recherche personnelle et de travail en groupe. Cette formation m'a forgé une capacité à apprendre rapidement, à m'adapter et à livrer des projets concrets.",
-  "Échange universitaire à Beijing Jiaotong University (Computer Science & IA). Motivé par l'apprentissage continu et l'exploration de nouveaux outils, j'accorde une attention particulière à la qualité et aux détails.",
+  "5th year student at Epitech Paris, specializing in Full Stack development. Epitech's pedagogy is project-based and autonomy-driven: few lectures, lots of hands-on practice, self-directed learning and teamwork. This has built my ability to learn quickly, adapt and deliver real projects.",
+  "Exchange program at Beijing Jiaotong University (Computer Science & AI). Motivated by continuous learning and exploring new tools, I pay close attention to quality and detail.",
 ]
 export const aboutExperiences = [
-  { role: 'Développement Full-Stack (React, TypeScript, Node.js, Docker)', company: 'Peinture Soleil' },
+  { role: 'Full-Stack development (React, TypeScript, Node.js, Docker)', company: 'Peinture Soleil' },
   { role: 'Front-End (HTML/CSS/JS)', company: 'Tiktak Production' },
 ]
-export const aboutQualities = ['Rigueur', 'Autonomie', 'Travail en équipe', 'Adaptabilité']
+export const aboutQualities = ['Rigor', 'Autonomy', 'Teamwork', 'Adaptability']
+
+export const skills = {
+  frontend: ['React', 'React Native', 'Next.js', 'Flutter', 'HTML/CSS'],
+  backend: ['Node.js', 'NestJS', 'FastAPI'],
+  languages: [
+    { name: 'JavaScript', level: 'Advanced' },
+    { name: 'TypeScript', level: 'Advanced' },
+    { name: 'Python', level: 'Advanced' },
+    { name: 'C', level: 'Advanced' },
+    { name: 'C++', level: 'Intermediate' },
+    { name: 'Dart', level: 'Intermediate' },
+  ],
+  devops: ['Terraform', 'Docker', 'GitHub Actions', 'CI/CD', 'GCP'],
+  graphicLibraries: ['shadcn/ui', 'MUI', 'Tailwind CSS', 'Framer Motion'],
+  stateLibraries: ['TanStack Query', 'Redux'],
+  formLibraries: ['Zod', 'React Hook Form'],
+  icons: ['Lucide React'],
+}
+export const tools = ['Git', 'Docker', 'Google Cloud Platform', 'Terraform', 'IA', 'VSCode', 'Vim', 'Emacs', 'Cursor', 'JetBrains']
+
 export const contactEmail = 'junot-hery-nantenaina.montpre@epitech.eu'
 export const contactPhone = '06 52 07 02 08'
 export const contactLinks = [
@@ -33,28 +53,28 @@ export const projects = [
   {
     title: 'Epitrello',
     description:
-      'Outil de gestion de projets collaboratif : boards, listes, cartes, assignations. API GraphQL avec authentification et temps réel. Stack : Next.js, NestJS, PostgreSQL, Prisma.',
+      'Collaborative project management: boards, lists, cards, assignments. GraphQL API with auth and real-time. Stack: Next.js, NestJS, PostgreSQL, Prisma.',
     link: 'https://github.com/mpjunot/epitrello',
     image: epitrelloImage,
   },
   {
     title: 'Pixel War',
     description:
-      'Bot Discord serverless sur GCP : interface web, canvas collaboratif, microservices. Cloud Functions Gen2, API Gateway, Pub/Sub, Firestore. Stack : Python, Terraform, App Engine.',
+      'Serverless Discord bot on GCP: web UI, collaborative canvas, microservices. Cloud Functions Gen2, API Gateway, Pub/Sub, Firestore. Stack: Python, Terraform, App Engine.',
     link: 'https://github.com/mpJunot/Pixel-War',
     image: pixelWarImage,
   },
   {
     title: 'Adapto',
     description:
-      "Application web de gestion d'entreprise pour PME : facturation, gestion des employés, suivi de présence, devis. Stack : React, MUI, TypeScript, Node.js, Docker.",
+      'Business management web app for SMBs: invoicing, employees, attendance, quotes. Stack: React, MUI, TypeScript, Node.js, Docker.',
     link: 'https://github.com/lucasmael/InternalProject',
     image: adaptoImage,
   },
   {
     title: 'CopyMe',
     description:
-      "Application mobile d'analyse des mouvements au basketball avec l'IA (détection et suivi). Projet Epitech combinant sport et intelligence artificielle. Stack : React, Python, FastAPI, YOLO.",
+      'Mobile app for basketball movement analysis with AI (detection & tracking). Epitech project combining sport and AI. Stack: React, Python, FastAPI, YOLO.',
     link: 'https://github.com/mpjunot/copyme',
     image: copyMeImage,
   },

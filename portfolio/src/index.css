@@ -234,16 +234,11 @@ body {
   30%, 100% { filter: brightness(0.95) contrast(1.08) saturate(1); transform: translate(0, 0); }
 }
 
-@keyframes neon-pulse {
-  0%, 100% { opacity: 1; filter: brightness(1); }
-  50% { opacity: 0.9; filter: brightness(1.1); }
-}
-
 .neon-pulse {
   animation: neon-pulse 3s ease-in-out infinite;
 }
 
-/* Fond cyberpunk — visible derrière le contenu */
+
 .cyberpunk-bg {
   position: fixed;
   inset: 0;
@@ -392,4 +387,60 @@ body {
   inset: 0;
   box-shadow: inset 0 0 200px 60px rgba(0, 0, 0, 0.5);
   pointer-events: none;
+}
+
+/* Éclairs réels — formes zigzag qui traversent la page */
+.lightning-overlay {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  z-index: 5;
+  overflow: hidden;
+}
+
+.lightning-screen-flash {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0.4) 0%, rgba(167, 139, 250, 0.2) 40%, rgba(34, 211, 238, 0.15) 100%);
+  opacity: 0;
+  animation: lightning-screen-flash 11s ease-in-out infinite;
+}
+
+.lightning-bolt {
+  position: absolute;
+  opacity: 0;
+  filter: drop-shadow(0 0 8px rgba(255, 255, 255, 0.9)) drop-shadow(0 0 20px rgba(34, 211, 238, 0.8));
+  animation: lightning-strike 11s ease-in-out infinite;
+}
+
+.lightning-bolt img {
+  display: block;
+  height: 100%;
+  width: auto;
+  min-width: 100%;
+  object-fit: contain;
+  object-position: top;
+  transform-origin: center center;
+}
+
+@keyframes lightning-strike {
+  0%, 14%, 100% { opacity: 0; }
+  15% { opacity: 1; }
+  15.2% { opacity: 0.15; }
+  15.4% { opacity: 1; }
+  16% { opacity: 0; }
+  42%, 100% { opacity: 0; }
+  /* deuxième éclair */
+  43% { opacity: 1; }
+  43.15% { opacity: 0.2; }
+  43.3% { opacity: 1; }
+  44% { opacity: 0; }
+}
+
+@keyframes lightning-screen-flash {
+  0%, 14.5%, 15.5%, 42.5%, 43.5%, 100% { opacity: 0; }
+  15% { opacity: 0.5; }
+  15.1% { opacity: 0.2; }
+  43% { opacity: 0.55; }
+  43.1% { opacity: 0; }
 }
