@@ -6,23 +6,23 @@ Professional portfolio — Junior Full-Stack developer, 5th year Epitech Paris. 
 
 ---
 
-## 🌐 Site
+## Site
 
 **[https://mpjunot.github.io](https://mpjunot.github.io)**
 
 ---
 
-## 🛠 Tech stack
+## Tech stack
 
 | Area        | Technologies                                      |
-| ----------- | -------------------------------------------------- |
-| Frontend    | React 19, TypeScript, Vite, Tailwind CSS           |
+| ----------- | --------------------------------------------------|
+| Frontend    | React 19, TypeScript, Vite, Tailwind CSS          |
 | Animations  | Framer Motion                                     |
 | Hosting     | GitHub Pages (CI/CD via GitHub Actions)           |
 
 ---
 
-## 📁 Repository structure
+## Repository structure
 
 ```
 ├── portfolio/                 # React app (Vite)
@@ -38,7 +38,7 @@ Professional portfolio — Junior Full-Stack developer, 5th year Epitech Paris. 
 
 ---
 
-## 🚀 Getting started
+## Getting started
 
 **Prerequisites:** Node.js 20+, pnpm
 
@@ -60,7 +60,7 @@ Output: `portfolio/dist/`
 
 ---
 
-## 📦 Deployment
+## Deployment
 
 Deployment runs automatically on every push to `main`:
 
@@ -73,7 +73,7 @@ Deployment runs automatically on every push to `main`:
 
 ---
 
-## 📄 Contact
+## Contact
 
 - **Email:** junot-hery-nantenaina.montpre@epitech.eu  
 - **LinkedIn:** [linkedin.com/in/junot-montpre](https://www.linkedin.com/in/junot-montpre/)  
@@ -81,4 +81,4 @@ Deployment runs automatically on every push to `main`:
 
 ---
 
-© 2025 Junot Montpre — All rights reserved.
+© 2026 Junot Montpre — All rights reserved.
